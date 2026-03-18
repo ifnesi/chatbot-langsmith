@@ -212,9 +212,11 @@ Sample documents included:
 
 
 Documents loaded into Redis as vectors
+
 ![img](static/img/redis.png)
 
 LangSmith Tracing
+
 ![img](static/img/ls_load_docs.png)
 
 ### 6. Run the Web Application
@@ -233,17 +235,20 @@ Features:
 - Conversation reset functionality
 - Real-time message updates via AJAX
 
-
 Login page
+
 ![img](static/img/chatbot_login.png)
 
 Chatbot
+
 ![img](static/img/chatbot.png)
 
 LangSmith Tracing
+
 ![img](static/img/ls_chatbot_trace.png)
 
 LangSmith Tracing (Waterfall view)
+
 ![img](static/img/ls_chatbot_wf.png)
 
 ### 7. Run the CLI Chatbot (Alternative)
