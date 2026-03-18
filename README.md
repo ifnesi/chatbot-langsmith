@@ -235,7 +235,7 @@ Features:
 
 
 Login page
-![img](static/img/login.png)
+![img](static/img/chatbot_login.png)
 
 Chatbot
 ![img](static/img/chatbot.png)
