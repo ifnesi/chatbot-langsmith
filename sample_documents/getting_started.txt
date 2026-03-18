@@ -1,0 +1,152 @@
+Getting Started Guide - CloudSync Pro
+
+WELCOME TO CLOUDSYNC PRO
+
+Thank you for choosing CloudSync Pro! This guide will help you get up and running quickly.
+
+STEP 1: CREATE YOUR ACCOUNT
+
+1. Visit app.cloudsync.com/signup
+2. Enter your email address and create a strong password (minimum 12 characters)
+3. Verify your email by clicking the link we send you
+4. Complete your profile information
+5. Choose your plan (or start your 30-day free trial)
+
+STEP 2: INSTALL THE DESKTOP CLIENT
+
+Windows:
+1. Download CloudSync Setup.exe from our downloads page
+2. Run the installer and follow the on-screen instructions
+3. Sign in with your account credentials
+4. Choose which folders to sync (you can change this later)
+
+Mac:
+1. Download CloudSync.dmg from our downloads page
+2. Drag CloudSync to your Applications folder
+3. Launch CloudSync and sign in
+4. Select folders to sync with your cloud storage
+
+Linux:
+1. Add our repository: sudo add-apt-repository ppa:cloudsync/stable
+2. Install: sudo apt-get update && sudo apt-get install cloudsync
+3. Launch from your applications menu
+4. Sign in and configure sync preferences
+
+STEP 3: INSTALL MOBILE APPS
+
+iOS (iPhone/iPad):
+- Download from the App Store (search "CloudSync Pro")
+- Sign in with your account
+- Enable photo backup in Settings if desired
+
+Android:
+- Download from Google Play Store
+- Sign in with your account
+- Grant necessary permissions for file access and photo backup
+
+STEP 4: UPLOAD YOUR FIRST FILES
+
+Web Interface:
+1. Log in to app.cloudsync.com
+2. Click the "Upload" button
+3. Drag and drop files or click to browse
+4. Files will appear in your cloud storage within seconds
+
+Desktop Client:
+1. Open your CloudSync folder (usually in your user directory)
+2. Copy or move files into this folder
+3. Files will automatically sync to the cloud
+4. A green checkmark appears when sync is complete
+
+STEP 5: SHARE YOUR FIRST FILE
+
+1. Right-click on any file in CloudSync
+2. Select "Share" from the menu
+3. Choose sharing method:
+   - Email invitation (requires CloudSync account)
+   - Public link (anyone with link can access)
+   - Password-protected link (extra security)
+4. Set permissions: view-only or edit access
+5. Optional: Set expiration date for links
+6. Click "Create Link" or "Send Invitation"
+
+STEP 6: INVITE TEAM MEMBERS (Business/Enterprise)
+
+1. Go to app.cloudsync.com/admin
+2. Click "Users" > "Invite Members"
+3. Enter email addresses (one per line or comma-separated)
+4. Assign roles: Admin, Member, or Guest
+5. Click "Send Invitations"
+6. Team members will receive an email with setup instructions
+
+STEP 7: SET UP SELECTIVE SYNC (Optional)
+
+Save disk space by syncing only the folders you need:
+1. Click the CloudSync icon in your system tray/menu bar
+2. Select "Preferences" > "Selective Sync"
+3. Uncheck folders you don't want on this device
+4. Click "Apply"
+5. Unchecked folders remain in the cloud but are removed from your computer
+
+STEP 8: ENABLE TWO-FACTOR AUTHENTICATION (Recommended)
+
+Protect your account with 2FA:
+1. Go to Account Settings > Security
+2. Click "Enable Two-Factor Authentication"
+3. Scan QR code with authenticator app (Google Authenticator, Authy, etc.)
+4. Enter the 6-digit code to confirm
+5. Save your backup codes in a secure location
+
+QUICK TIPS FOR NEW USERS
+
+- Pin important folders for quick access in the web interface
+- Use the search bar to find files instantly across all your storage
+- Right-click files to see version history and restore previous versions
+- Enable desktop notifications to stay updated on sharing and comments
+- Check your storage usage in Account Settings to avoid hitting limits
+- Use keyboard shortcuts: Ctrl+U (upload), Ctrl+K (search), Ctrl+N (new folder)
+
+UNDERSTANDING SYNC STATUS ICONS
+
+Green checkmark: File is synced and up to date
+Blue sync arrows: File is currently syncing
+Yellow warning: Sync paused or issue detected
+Red X: Sync error (hover for details)
+Cloud icon: File is online-only (not downloaded to this device)
+
+COMMON FIRST-TIME QUESTIONS
+
+Q: Where is my CloudSync folder located?
+A: Windows: C:\Users\[YourName]\CloudSync
+   Mac: /Users/[YourName]/CloudSync
+   Linux: /home/[YourName]/CloudSync
+
+Q: Can I change the CloudSync folder location?
+A: Yes! Go to Preferences > General > Change Location. Note: This will re-sync all files.
+
+Q: How do I know if my files are backed up?
+A: Green checkmarks indicate successful sync. You can also verify by logging into the web interface.
+
+Q: What happens if I delete a file on one device?
+A: It will be deleted from all synced devices and moved to trash (recoverable for 30 days).
+
+Q: Can I access my files offline?
+A: Yes! Any file synced to your device is available offline. Mark files as "Available Offline" in mobile apps.
+
+NEXT STEPS
+
+- Explore the web interface and familiarize yourself with the layout
+- Set up your first shared folder for team collaboration
+- Review our Advanced Features guide for power user tips
+- Join our community forum at community.cloudsync.com
+- Watch video tutorials at learn.cloudsync.com
+
+NEED HELP?
+
+- Knowledge Base: help.cloudsync.com
+- Email Support: support@cloudsync.com
+- Live Chat: Available 24/7 on our website
+- Community Forum: community.cloudsync.com
+- Video Tutorials: youtube.com/cloudsyncpro
+
+Welcome aboard! We're excited to help you stay in sync.

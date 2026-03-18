@@ -1,0 +1,87 @@
+Troubleshooting Guide - CloudSync Pro
+
+SYNC ISSUES
+
+Problem: Files not syncing
+Solutions:
+1. Check your internet connection
+2. Verify you're logged in to the same account on all devices
+3. Ensure you haven't exceeded your storage quota
+4. Check if the file is locked by another application
+5. Restart the CloudSync desktop client
+6. Check firewall settings - CloudSync needs outbound access on ports 443 and 80
+
+Problem: Slow sync speed
+Solutions:
+1. Check your internet bandwidth
+2. Reduce the number of files being synced simultaneously (Settings > Bandwidth)
+3. Pause sync during video calls or other bandwidth-intensive activities
+4. Disable antivirus real-time scanning for the CloudSync folder (if safe to do so)
+5. Use LAN sync feature for faster local network transfers
+
+LOGIN ISSUES
+
+Problem: Can't log in / "Invalid credentials" error
+Solutions:
+1. Verify your email and password are correct (passwords are case-sensitive)
+2. Clear your browser cache and cookies
+3. Try incognito/private browsing mode
+4. Reset your password using "Forgot Password"
+5. Check if your account has been locked due to multiple failed login attempts (wait 30 minutes)
+
+Problem: Two-factor authentication not working
+Solutions:
+1. Ensure your device's clock is accurate (TOTP codes are time-sensitive)
+2. Use backup codes if authenticator app isn't working
+3. Contact support to disable 2FA temporarily if you've lost access
+
+PERFORMANCE ISSUES
+
+Problem: Desktop app using too much CPU/memory
+Solutions:
+1. Update to the latest version of CloudSync
+2. Reduce the number of folders being synced
+3. Enable selective sync to sync only necessary folders
+4. Increase sync interval in settings
+5. Close and restart the application
+
+Problem: Web interface loading slowly
+Solutions:
+1. Clear browser cache
+2. Disable browser extensions temporarily
+3. Try a different browser (Chrome, Firefox, Safari recommended)
+4. Check your internet connection speed
+
+MOBILE APP ISSUES
+
+Problem: Photos not auto-uploading
+Solutions:
+1. Enable photo backup in app settings
+2. Grant storage and camera permissions to CloudSync app
+3. Connect to Wi-Fi (auto-upload only works on Wi-Fi by default to save data)
+4. Check battery optimization settings - CloudSync needs background access
+5. Ensure you have enough storage quota remaining
+
+ERROR CODES
+
+Error 403: Permission denied
+- You don't have access to this file or folder
+- Contact the owner to request access
+
+Error 404: File not found
+- File has been deleted or moved
+- Check the trash folder
+
+Error 429: Too many requests
+- You've exceeded API rate limits
+- Wait a few minutes before trying again
+
+Error 500: Server error
+- Our servers are experiencing issues
+- Check status.cloudsync.com for updates
+- Try again in a few minutes
+
+STILL NEED HELP?
+Contact support: support@cloudsync.com
+Enterprise customers: Call +1-800-CLOUD-99
+Live chat: Available 24/7 on our website

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudSync Pro - Chat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-dark">
+    <!-- Header -->
+    <nav class="navbar navbar-dark bg-gradient shadow-sm">
+        <div class="container-fluid">
+            <div class="d-flex flex-column">
+                <span class="navbar-brand mb-0 h5">
+                    <i class="bi bi-cloud-check-fill text-primary me-2"></i>
+                    CloudSync Pro Support
+                </span>
+                <small class="text-light ms-4">
+                    <i class="bi bi-emoji-smile-fill text-warning me-2"></i>
+                    Hello, {{ username }}! How can I help you today?
+                </small>
+            </div>
+            <div class="d-flex align-items-center">
+                <span class="text-light me-3 d-none d-md-inline">
+                    <i class="bi bi-person-circle me-2"></i>{{ username }}
+                </span>
+                <button class="btn btn-outline-light btn-sm me-2" id="resetBtn" title="Clear conversation">
+                    <i class="bi bi-arrow-counterclockwise"></i>
+                </button>
+                <a href="{{ url_for('logout') }}" class="btn btn-outline-danger btn-sm">
+                    <i class="bi bi-box-arrow-right"></i> Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Chat Container -->
+    <div class="container-fluid chat-container">
+        <div class="row h-100">
+            <div class="col-12 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 d-flex flex-column h-100">
+
+                <!-- Messages Container -->
+                <div class="messages-container flex-grow-1" id="messagesContainer">
+                    <!-- Messages will be added here dynamically -->
+                </div>
+
+                <!-- Input Form -->
+                <div class="input-container">
+                    <form id="chatForm" class="mb-3">
+                        <div class="input-group input-group-lg">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="messageInput"
+                                placeholder="Ask me anything about CloudSync Pro..."
+                                autocomplete="off"
+                                required
+                            >
+                            <button class="btn btn-primary px-4" type="submit" id="sendBtn">
+                                <i class="bi bi-send-fill"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Quick Questions -->
+                    <div class="quick-questions mb-2" id="quickQuestions">
+                        <small class="text-muted d-block mb-2">Quick questions:</small>
+                        <div class="d-flex flex-wrap gap-2">
+                            <button class="btn btn-sm btn-outline-secondary quick-q" data-question="How do I reset my password?">
+                                <i class="bi bi-key-fill me-1"></i>Reset password
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary quick-q" data-question="What are the pricing plans?">
+                                <i class="bi bi-currency-dollar me-1"></i>Pricing
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary quick-q" data-question="Is my data encrypted?">
+                                <i class="bi bi-shield-lock-fill me-1"></i>Security
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary quick-q" data-question="What's the file size limit?">
+                                <i class="bi bi-file-earmark-check me-1"></i>File limits
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-gradient shadow-sm">
+        <div class="container-fluid">
+            <div class="text-center py-2">
+                <small class="text-muted">
+                    <i class="bi bi-lightning-charge-fill text-primary me-1"></i>
+                    CloudSync Pro is powered by
+                    <a href="https://www.langchain.com/" target="_blank" class="text-decoration-none text-primary">LangChain</a>
+                    and
+                    <a href="https://smith.langchain.com/" target="_blank" class="text-decoration-none text-primary">LangSmith</a>
+                </small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner Template -->
+    <template id="loadingTemplate">
+        <div class="message-bubble bot-message loading-message">
+            <div class="d-flex align-items-center">
+                <div class="spinner-border spinner-border-sm text-primary me-2" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <span class="text-muted">Thinking...</span>
+            </div>
+        </div>
+    </template>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
