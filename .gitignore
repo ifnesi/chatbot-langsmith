@@ -34,3 +34,7 @@ models/
 
 # Redis data
 redis-data/
+
+# Claude
+CLAUDE.md
+.claude
