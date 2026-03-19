@@ -1,6 +1,6 @@
 # CloudSync Pro Support Chatbot
 
-A production-ready RAG (Retrieval-Augmented Generation) chatbot with a modern web interface, demonstrating **LangSmith capabilities** for prompt engineering, testing, and monitoring.
+A RAG (Retrieval-Augmented Generation) chatbot with a modern web interface, demonstrating **LangSmith capabilities** for prompt engineering, testing, and monitoring.
 
 ## ✨ Features
 
@@ -508,9 +508,3 @@ For production deployment, consider:
 - Use appropriate model sizes (Haiku vs. Sonnet)
 - Set up budget alerts
 - Consider reserved capacity for predictable workloads
-
----
-
-**Built with ❤️ for demonstrating LangSmith capabilities and modern RAG architecture**
-
-*This project demonstrates best practices for building observable, testable, and maintainable RAG applications with LangChain and LangSmith.*

@@ -43,6 +43,48 @@ $(document).ready(function() {
         }
     }
 
+    // Hide empty state when first message is added
+    function hideEmptyState() {
+        const emptyState = $('#emptyState');
+        if (emptyState.length && emptyState.is(':visible')) {
+            emptyState.fadeOut(400, function() {
+                $(this).remove();
+            });
+        }
+    }
+
+    // Show empty state when messages are cleared
+    function showEmptyState() {
+        if (!$('#emptyState').length) {
+            const emptyStateHtml = `
+                <div class="empty-state" id="emptyState">
+                    <div class="text-center py-5">
+                        <div class="empty-icon mb-4">
+                            <i class="bi bi-chat-dots-fill text-primary"></i>
+                        </div>
+                        <h3 class="text-light mb-3">Welcome to CloudSync Pro Support!</h3>
+                        <p class="text-muted mb-4">Ask me anything about CloudSync Pro features, pricing, or troubleshooting.</p>
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <i class="bi bi-lightning-charge-fill text-warning"></i>
+                                <span>Instant Answers</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-shield-check text-success"></i>
+                                <span>24/7 Available</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-robot text-primary"></i>
+                                <span>AI-Powered</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            messagesContainer.prepend(emptyStateHtml);
+        }
+    }
+
     // Send message to chatbot
     function sendMessage(question) {
         // Disable input while processing
@@ -93,6 +135,9 @@ $(document).ready(function() {
 
     // Add message to chat
     function addMessage(content, type, sources = null) {
+        // Hide empty state on first message
+        hideEmptyState();
+
         const time = new Date().toLocaleTimeString('en-US', {
             hour: '2-digit',
             minute: '2-digit'
@@ -212,6 +257,9 @@ $(document).ready(function() {
                 if (response.success) {
                     // Clear messages
                     messagesContainer.empty();
+
+                    // Show empty state again
+                    showEmptyState();
 
                     // Show quick questions again if they were hidden
                     if (!$('#quickQuestions').is(':visible')) {
