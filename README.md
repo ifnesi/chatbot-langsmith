@@ -9,6 +9,7 @@ A RAG (Retrieval-Augmented Generation) chatbot with a modern web interface, demo
 - 🤖 **AWS Bedrock Integration** - Claude Haiku for chat, Titan for embeddings
 - 🔍 **Redis Vector Store** - Fast semantic search with vector embeddings
 - 📊 **LangSmith Monitoring** - Complete observability of all RAG operations
+- 🧪 **Automated Evaluation** - Test datasets with 4 evaluators (relevance, groundedness, helpfulness, scope)
 - 💬 **Conversation Memory** - Context-aware responses with chat history
 - 📚 **Source Citations** - Expandable source documents for transparency
 - 🎨 **Responsive Design** - Beautiful UI works on desktop and mobile
@@ -22,9 +23,11 @@ This project showcases how LangSmith helps with:
 - Compare performance across prompt templates
 - Optimize retrieval and generation prompts separately
 
-### 2. **Testing**
-- Evaluate RAG quality with keyword coverage
-- Track test results over time in LangSmith
+### 2. **Testing & Evaluation**
+- **Dataset Creation**: Build test datasets with expected outputs
+- **Automated Evaluators**: Score responses on relevance, groundedness, helpfulness, and scope
+- **Regression Testing**: Track quality over time with each code change
+- **A/B Testing**: Compare different models, prompts, or retrieval strategies
 
 ### 3. **Monitoring**
 - Real-time trace visualization for all queries
@@ -286,13 +289,77 @@ Interactive terminal-based chatbot for testing and development.
    - Identify slow or failing queries
    - Track conversation flows with memory
 
+## 🧪 Testing & Evaluation
+
+Evaluate your chatbot's performance using LangSmith datasets and automated evaluators.
+
+### Create Test Dataset
+
+Generate a comprehensive test dataset with 18 examples:
+
+```bash
+python create_dataset.py
+```
+
+This creates a dataset in LangSmith with test cases covering:
+- **Account management** (password reset, upgrades, cancellation)
+- **Pricing and plans**
+- **Security features** (encryption, 2FA)
+- **File operations** (sharing, versioning, offline access)
+- **Troubleshooting** (sync issues, error codes)
+- **Limits** (file size, devices)
+- **Edge cases** (out-of-scope questions, invalid input)
+
+### Run Evaluation
+
+Evaluate the chatbot against the test dataset:
+
+```bash
+python evaluate_chatbot.py
+```
+
+This runs 4 automated evaluators on each test example:
+- **Relevance** (0-1): Is the answer on-topic and appropriate?
+- **Groundedness** (0-1): Does it use retrieved sources without hallucinating?
+- **Helpfulness** (0-1): Does it provide actionable, complete answers?
+- **Scope Handling** (0-1): Does it stay within CloudSync Pro support domain?
+
+### View Results
+
+After evaluation completes, view detailed results in LangSmith:
+1. Go to https://smith.langchain.com
+2. Navigate to your project (from `LANGCHAIN_PROJECT` env var)
+3. Click "Datasets" → "CloudSync Pro Support - RAG Evaluation"
+4. View experiment results with scores, traces, and comparisons
+
+### Use Cases
+
+**Prompt Engineering**: Test different prompt variations and compare scores
+```python
+# Edit utils/prompts.py, then re-run:
+python evaluate_chatbot.py
+```
+
+**Regression Testing**: Run evaluations after code changes
+```bash
+# After modifying retrieval logic or adding documents:
+python evaluate_chatbot.py
+```
+
+**Performance Tracking**: Compare evaluation runs over time in LangSmith UI
+
+For detailed documentation on evaluation, see the LangSmith documentation at https://docs.langchain.com/langsmith/evaluate-llm-application
+
 ## 🔍 Key Files
 
 ### Backend
 - `app.py` - Flask web application with session management
 - `chatbot.py` - RAG chatbot implementation (CLI and library)
 - `load_documents.py` - Document loader for Redis vector store
+- `create_dataset.py` - Create LangSmith evaluation dataset
+- `evaluate_chatbot.py` - Run automated evaluations with 4 evaluators
 - `utils/__init__.py` - Shared utilities for embeddings and Redis (VectorStoreUtils class)
+- `utils/prompts.py` - System prompt templates
 
 ### Frontend
 - `templates/login.html` - Login page with modern dark UI
@@ -454,6 +521,19 @@ python app.py
 - Check browser console for JavaScript errors
 - Verify static files are being served correctly
 - Ensure Flask app is running
+
+### Evaluation errors
+```bash
+# Dataset not found
+python create_dataset.py  # Create dataset first
+
+# Evaluation fails - check Redis and documents
+docker ps  # Verify redis-vectordb is running
+python load_documents.py  # Ensure documents are loaded
+
+# LangSmith API errors
+# Verify LANGSMITH_API_KEY in .env is correct
+```
 
 ## 📚 Additional Resources
 

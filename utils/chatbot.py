@@ -209,6 +209,14 @@ class RAGChatbot:
         Returns:
             Dictionary with answer and sources
         """
+        # Validate input - handle empty or whitespace-only questions
+        if not question or not question.strip():
+            return {
+                "question": question,
+                "answer": "I'd be happy to help! Please ask me a question about CloudSync Pro.",
+                "sources": list(),
+            }
+
         # Step 1: Generate embedding for the query (for tracing purposes)
         _ = self._generate_embedding(question)
 
