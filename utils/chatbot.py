@@ -21,6 +21,8 @@ except ImportError:
     # When running as script from utils directory
     sys.path.insert(0, str(Path(__file__).parent.parent))
     from utils import VectorStoreUtils, set_logging_format, check_env_vars
+finally:
+    from utils.prompts import initial_system_prompt_generator
 
 
 def format_docs(docs):
@@ -102,22 +104,7 @@ class RAGChatbot:
             raise
 
         # Create initial system prompt
-        initial_system_prompt = """You are a helpful customer support assistant for CloudSync Pro, a cloud storage solution.
-
-Use the following context from our documentation to answer the customer's question. If the context doesn't contain relevant information, say so politely and suggest contacting support.
-
-Context from documentation:
-{context}
-
-Instructions:
-- Be friendly, professional, and concise
-- Provide specific details from the context when available
-- If you mention technical steps, format them clearly
-- If the context doesn't have the answer, admit it and suggest alternatives
-- Always prioritize customer satisfaction and clarity in your responses"""
-
-        if html_output:
-            initial_system_prompt += "\n- Answer in a HTML ready format, using paragraphs, lists, and bold text where appropriate"
+        initial_system_prompt = initial_system_prompt_generator(html_output=html_output)
 
         # Create custom prompt template for RAG
         self.prompt = ChatPromptTemplate.from_messages(
